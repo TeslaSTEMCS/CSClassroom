@@ -17,7 +17,7 @@
       template: src=../Templates/WebApp/docker-compose.yaml.tpl dest=~/webapp/docker-compose.yaml
     - name: Update appsettings.Environment.json from template
       template: src=../Templates/WebApp/appsettings.Environment.json.tpl dest=~/webapp/appsettings.Environment.json
-    - docker_service:
+    - docker_compose:
         project_src: ~/webapp
         pull: yes
         state: present
