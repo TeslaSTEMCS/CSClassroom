@@ -54,7 +54,7 @@ PARSERS = {}
 def _clean_dc(dcname):
     # Consul DCs are strictly alphanumeric with underscores and hyphens -
     # ensure that the consul_dc attribute meets these requirements.
-    return re.sub('[^\w_\-]', '-', dcname)
+    return re.sub(r'[^\w_\-]', '-', dcname)
 
 
 def iterhosts(resources):

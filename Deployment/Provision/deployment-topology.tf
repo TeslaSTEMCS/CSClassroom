@@ -1,10 +1,8 @@
-provider "linode"
-{
+provider "linode" {
   key = "${var.linode_api_key}"
 }
 
-resource "linode_linode" "csclassroom-webapp"
-{
+resource "linode_linode" "csclassroom-webapp" {
   image = "Ubuntu 16.04 LTS"
   kernel = "GRUB 2"
   name = "csclassroom-webapp"
@@ -16,8 +14,7 @@ resource "linode_linode" "csclassroom-webapp"
   root_password="${var.initial_root_password}"
 }
 
-resource "linode_linode" "csclassroom-buildservice"
-{
+resource "linode_linode" "csclassroom-buildservice" {
   count = "${var.num_buildservice_nodes}"
   image = "Ubuntu 16.04 LTS"
   kernel = "GRUB 2"
